@@ -1,3 +1,5 @@
+## vim: set tabstop=4 expandtab shiftwidth=4 softtabstop=4:
+
 ##
 ## Copyright (C) 2008       Marco Guazzone
 ##                          [Distributed Computing System (DCS) Group,
@@ -39,7 +41,7 @@ source( 'lib/mg/mg_plot.R' )
 ## Class representation
 setClass(
 	'mg_teragrid',
-	representation( data='data.frame' )
+	slots = ( data='data.frame' )
 );
 
 ## Constructor
@@ -48,7 +50,7 @@ setMethod(
 	'mg_teragrid',
 	function( .Object, file, omitAgtS = FALSE, omitSeqE = FALSE, omitSgtE = FALSE, omitNle0 = FALSE, fixAgtS = FALSE )
 	{
-		.Object <- callNextMethod()
+		#.Object <- callNextMethod()
 		.Object@data <- read.table( file, header = TRUE )
 
 		if ( omitAgtS )

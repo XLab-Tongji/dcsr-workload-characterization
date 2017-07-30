@@ -1,3 +1,5 @@
+## vim: set tabstop=4 expandtab shiftwidth=4 softtabstop=4:
+
 ##
 ## Copyright (C) 2008       Marco Guazzone
 ##                          [Distributed Computing System (DCS) Group,
@@ -40,19 +42,25 @@ source( "lib/mg/mg_fit.R" );
 ## Class representation
 setClass(
 	"mg_lcg",
-	representation( data="data.frame" )
+	slots = c( data="data.frame" )
 );
 
 ## Constructor
 setMethod(
-	"initialize",
-	"mg_lcg",
-	function( .Object, file )
-	{
-		.Object <- callNextMethod()
-		.Object@data <- read.table( file, header = TRUE )
-		return( .Object )
-	}
+    "initialize",
+    "mg_lcg",
+    function( .Object, file )
+    {
+        #.Object <- callNextMethod()
+        .Object@data <- read.table( file, header = FALSE )
+        # timestamp: Unix timestamp of submit time
+        # vo: group name
+        # uid: user ID
+        # node: compute element name
+        # runtime: job runtime
+        names(.Object@data) <- c("timestamp", "vo", "uid", "node", "runtime");
+        return( .Object )
+    }
 );
 
 ####

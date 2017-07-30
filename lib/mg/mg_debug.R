@@ -1,3 +1,5 @@
+## vim: set tabstop=4 expandtab shiftwidth=4 softtabstop=4:
+
 ##
 ## Copyright (C) 2008       Marco Guazzone
 ##                          [Distributed Computing System (DCS) Group,
@@ -35,21 +37,21 @@ setIs("file", "connection")
 setIs("terminal", "connection")
 
 setClass(
-        "mg_debug",
-        representation( active="logical", con="connection" )
+    "mg_debug",
+    slots = c( active="logical", con="connection" )
 );
 
 ## Constructor
 setMethod(
-        "initialize",
-        "mg_debug",
-        function( .Object, activate = TRUE, con = stderr() )
-        {
-                .Object <- callNextMethod()
-                .Object@active <- activate | !is.null(con);
-		.Object@con <- con;
-                return( .Object )
-        }
+    "initialize",
+    "mg_debug",
+    function( .Object, activate = TRUE, con = stderr() )
+    {
+            #.Object <- callNextMethod()
+            .Object@active <- activate | !is.null(con);
+            .Object@con <- con;
+            return( .Object )
+    }
 );
 
 ####
