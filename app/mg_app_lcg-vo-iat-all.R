@@ -65,9 +65,9 @@ source( "lib/mg/mg_statsutils.R" );
 
 set.seed(123456); # used to eventually repeat the same experiment
 
-dbg <- new( "mg_debug", activate = TRUE );
+dbg <- mg_debug( activate = TRUE );
 
-lcg <- new( "mg_lcg", MG_APP_CONF_LCG_LOGFULLNAME );
+lcg <- mg_lcg( MG_APP_CONF_LCG_LOGFULLNAME );
 
 #voNames <- mg_lcg_voNames( lcg );
 #voNames <- c( "alice" );#, "atlas", "babar" );#, "cms", "lhcb" );#XXX

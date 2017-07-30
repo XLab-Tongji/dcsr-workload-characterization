@@ -65,11 +65,10 @@ source( "lib/mg/mg_statsutils.R" );
 
 set.seed(123456); # used to eventually repeat the same experiment
 
-dbg <- new( "mg_debug", activate = TRUE );
+dbg <- mg_debug( activate = TRUE );
 
-#teragrid <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME );
-teragrid <- new(
-	"mg_teragrid",
+#teragrid <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME );
+teragrid <- mg_teragrid(
 	MG_APP_CONF_TERAGRID_LOGFULLNAME,
 	omitSeqE = TRUE,
 	omitSgtE = TRUE,

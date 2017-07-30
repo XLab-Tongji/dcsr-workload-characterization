@@ -41,61 +41,61 @@ source( "lib/mg/mg_plot.R" );
 source( "lib/mg/mg_statsutils.R" );
 
 # no omit && no fix
-tgFull <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME );
+tgFull <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME );
 
 # omit{timestamp > startime}
-tgNoAgtS <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME, omitAgtS = TRUE );
+tgNoAgtS <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME, omitAgtS = TRUE );
 # omit{starttime == endtime}
-tgNoSeqE <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME, omitSeqE = TRUE );
+tgNoSeqE <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME, omitSeqE = TRUE );
 # omit{starttime > endtime}
-tgNoSgtE <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME, omitSgtE = TRUE );
+tgNoSgtE <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME, omitSgtE = TRUE );
 # omit{nodes <= 0}
-tgNoNle0 <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME, omitNle0 = TRUE );
+tgNoNle0 <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME, omitNle0 = TRUE );
 # fix{timestamp > starttime}
-tgFixAgtS <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME, fixAgtS = TRUE );
+tgFixAgtS <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME, fixAgtS = TRUE );
 
 # omit{timestamp > starttime} && omit{starttime == endtime}
-tgNoAgtSNoSeqE <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME, omitAgtS = TRUE , omitSeqE = TRUE );
+tgNoAgtSNoSeqE <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME, omitAgtS = TRUE , omitSeqE = TRUE );
 # omit{timestamp > starttime} && omit{starttime > endtime}
-tgNoAgtSNoSgtE <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME, omitAgtS = TRUE , omitSgtE = TRUE );
+tgNoAgtSNoSgtE <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME, omitAgtS = TRUE , omitSgtE = TRUE );
 # omit{timestamp > starttime} && omit{nodes <= 0}
-tgNoAgtSNle0 <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME, omitAgtS = TRUE , omitNle0 = TRUE );
+tgNoAgtSNle0 <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME, omitAgtS = TRUE , omitNle0 = TRUE );
 
 # omit{starttime == endtime} && omit{starttime > endtime}
-tgNoSeqENoSgtE <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME, omitSeqE = TRUE, omitSgtE = TRUE );
+tgNoSeqENoSgtE <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME, omitSeqE = TRUE, omitSgtE = TRUE );
 # omit{nodes == endtime} && omit{nodes <= 0}
-tgNoSeqENoNle0 <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME, omitSeqE = TRUE, omitNle0 = TRUE );
+tgNoSeqENoNle0 <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME, omitSeqE = TRUE, omitNle0 = TRUE );
 # omit{nodes == endtime} && fix{timestamp >  starttime}
-tgNoSeqEFixAgtS <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME, omitSeqE = TRUE, fixAgtS = TRUE );
+tgNoSeqEFixAgtS <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME, omitSeqE = TRUE, fixAgtS = TRUE );
 
 # omit{starttime > endtime} && omit{nodes <= 0}
-tgNoSgtENoNle0 <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME, omitSgtE = TRUE, omitNle0 = TRUE );
+tgNoSgtENoNle0 <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME, omitSgtE = TRUE, omitNle0 = TRUE );
 # omit{starttime > endtime} && fix{timestamp > starttime}
-tgNoSgtEFixAgtS <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME, omitSgtE = TRUE, fixAgtS = TRUE );
+tgNoSgtEFixAgtS <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME, omitSgtE = TRUE, fixAgtS = TRUE );
 
 # omit{nodes <= 0} && fix{timestamp > starttime}
-tgNoNle0FixAgtS <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME, omitNle0 = TRUE, fixAgtS = TRUE );
+tgNoNle0FixAgtS <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME, omitNle0 = TRUE, fixAgtS = TRUE );
 
 # omit{timestamp > startime} && omit{starttime == endtime} && omit{starttime > endtime}
-tgNoAgtSNoSeqENoSgtE <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME, omitAgtS = TRUE , omitSeqE = TRUE, omitSgtE = TRUE );
+tgNoAgtSNoSeqENoSgtE <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME, omitAgtS = TRUE , omitSeqE = TRUE, omitSgtE = TRUE );
 # omit{timestamp > startime} && omit{starttime == endtime} && omit{nodes <= 0}
-tgNoAgtSNoSeqENoNle0 <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME, omitAgtS = TRUE , omitSeqE = TRUE, omitNle0 = TRUE );
+tgNoAgtSNoSeqENoNle0 <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME, omitAgtS = TRUE , omitSeqE = TRUE, omitNle0 = TRUE );
 # omit{timestamp > startime} && omit{starttime > endtime} && omit{nodes <= 0}
-tgNoAgtSNoSgtENoNle0 <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME, omitAgtS = TRUE , omitSgtE = TRUE, omitNle0 = TRUE );
+tgNoAgtSNoSgtENoNle0 <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME, omitAgtS = TRUE , omitSgtE = TRUE, omitNle0 = TRUE );
 
 # omit{starttime == endtime} && omit{starttime > endtime} && omit{nodes <= 0}
-tgNoSeqENoSgtENoNle0 <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME, omitSeqE = TRUE, omitSgtE = TRUE, omitNle0 = TRUE );
+tgNoSeqENoSgtENoNle0 <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME, omitSeqE = TRUE, omitSgtE = TRUE, omitNle0 = TRUE );
 # omit{starttime == endtime} && omit{starttime > endtime} && fix{timestamp gt starttime}
-tgNoSeqENoSgtEFixAgtS <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME, omitSeqE = TRUE, omitSgtE = TRUE, fixAgtS = TRUE );
+tgNoSeqENoSgtEFixAgtS <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME, omitSeqE = TRUE, omitSgtE = TRUE, fixAgtS = TRUE );
 
 # omit{starttime > endtime} && omit{nodes <= 0} && fix{timestamp gt starttime}
-tgNoSgtENoNle0FixAgtS <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME, omitSgtE = TRUE, omitNle0 = TRUE, fixAgtS = TRUE );
+tgNoSgtENoNle0FixAgtS <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME, omitSgtE = TRUE, omitNle0 = TRUE, fixAgtS = TRUE );
 
 # omit{timestamp > starttime> && omit{starttime == endtime} && omit{starttime > endtime} && omit{nodes <= 0}
-tgNoAgtSNoSeqENoSgtENoNle0 <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME, omitAgtS = TRUE , omitSeqE = TRUE , omitSgtE = TRUE, omitNle0 = TRUE );
+tgNoAgtSNoSeqENoSgtENoNle0 <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME, omitAgtS = TRUE , omitSeqE = TRUE , omitSgtE = TRUE, omitNle0 = TRUE );
 
 # omit{starttime == endtime} && omit{starttime > endtime} && omit{nodes <= 0} && fix{timestamp > starttime}
-tgNoSeqENoSgtENoNle0FixAgtS <- new( "mg_teragrid", MG_APP_CONF_TERAGRID_LOGFULLNAME, omitSeqE = TRUE , omitSgtE = TRUE, omitNle0 = TRUE, fixAgtS = TRUE );
+tgNoSeqENoSgtENoNle0FixAgtS <- mg_teragrid( MG_APP_CONF_TERAGRID_LOGFULLNAME, omitSeqE = TRUE , omitSgtE = TRUE, omitNle0 = TRUE, fixAgtS = TRUE );
 
 # BEGIN print summary informations
 colors <- rainbow(23);
