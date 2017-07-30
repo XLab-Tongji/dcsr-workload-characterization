@@ -40,7 +40,7 @@ source( "lib/mg/mg_plot.R" );
 source( "lib/mg/mg_fit.R" );
 
 ## Class representation
-setClass(
+mg_lcg <- setClass(
 	"mg_lcg",
 	slots = c( data="data.frame" )
 );

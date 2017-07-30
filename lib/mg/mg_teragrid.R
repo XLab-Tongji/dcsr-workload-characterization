@@ -39,7 +39,7 @@
 source( 'lib/mg/mg_plot.R' )
 
 ## Class representation
-setClass(
+mg_teragrid <- setClass(
 	'mg_teragrid',
 	slots = ( data='data.frame' )
 );

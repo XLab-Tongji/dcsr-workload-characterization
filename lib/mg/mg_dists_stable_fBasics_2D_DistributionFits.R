@@ -54,7 +54,7 @@
 #  show.fDISTFIT         Prints Results from a Fitted Distribution
 
 
-setClass("fDISTFIT", 
+fDISTFIT <- setClass("fDISTFIT", 
     slots = c(
         call = "call",
         model = "character",

@@ -36,7 +36,7 @@ setClass("terminal")
 setIs("file", "connection")
 setIs("terminal", "connection")
 
-setClass(
+mg_debug <- setClass(
     "mg_debug",
     slots = c( active="logical", con="connection" )
 );
